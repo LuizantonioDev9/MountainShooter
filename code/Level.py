@@ -7,5 +7,5 @@ class Level:
         self.name = None
         self.entity_list = None
 
-    def run(self, ):
+    def run(self):
         pass
