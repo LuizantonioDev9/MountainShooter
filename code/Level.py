@@ -9,8 +9,10 @@ from pygame.rect import Rect
 from pygame.surface import Surface
 
 from code import Entity
+from code.Enemy import Enemy
 from code.EntityFactory import EntityFactory
 from code.EntityMediator import EntityMediator
+from code.Player import Player
 from code.const import COLOR_WHITE, WIN_HEIGHT, MENU_OPTION, EVENT_ENEMY, SPAWN_TIME
 
 
@@ -36,6 +38,10 @@ class Level:
             for ent in self.entity_list:
                 self.window.blit(source=ent.surf, dest=ent.rect)  # desenha a img na tela
                 ent.move()
+                if isinstance(ent, (Player, Enemy)): # verificação de tiro
+                    shoot = ent.shoot()
+                    if shoot is not None:
+                        self.entity_list.append(shoot)
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
