@@ -6,7 +6,7 @@ from pygame.font import Font
 from pygame.rect import Rect
 from pygame.surface import Surface
 
-from code.const import WIN_WIDTH, COLOR_ORANGE, COLOR_WHITE, MENU_OPTION
+from code.const import WIN_WIDTH, COLOR_ORANGE, C_WHITE, MENU_OPTION
 
 
 class Menu:
@@ -25,14 +25,14 @@ class Menu:
             self.window.blit(source=self.surf,
                              dest=self.rect)  # da onde está surgindo o bg e para onde vai ser aplicado
             # Textos menu
-            self.menu_text(80, "Mountain", COLOR_WHITE, ((WIN_WIDTH / 2), 70))
-            self.menu_text(70, "Shooter", COLOR_WHITE, ((WIN_WIDTH / 2), 120))
+            self.menu_text(80, "Mountain", C_WHITE, ((WIN_WIDTH / 2), 70))
+            self.menu_text(70, "Shooter", C_WHITE, ((WIN_WIDTH / 2), 120))
 
             for i in range(len(MENU_OPTION)):
                 if i == menu_option:
                     self.menu_text(30, MENU_OPTION[i], COLOR_ORANGE, ((WIN_WIDTH / 2), 200 + 25 * i))
                 else:
-                    self.menu_text(30, MENU_OPTION[i], COLOR_WHITE, ((WIN_WIDTH / 2), 200 + 25 * i))
+                    self.menu_text(30, MENU_OPTION[i], C_WHITE, ((WIN_WIDTH / 2), 200 + 25 * i))
 
             pygame.display.flip()  # inicia o display
 
