@@ -10,6 +10,4 @@ class Enemy(Entity):
         super().__init__(name, position)
 
     def move(self):
-        self.rect.centerx -= ENTITY_SPEED[self.name]  # velocidade do backgroud
-        if self.rect.right <= 0:
-            self.rect.left = WIN_WIDTH
+        self.rect.centerx -= ENTITY_SPEED[self.name]
