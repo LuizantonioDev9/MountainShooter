@@ -6,7 +6,7 @@ from pygame.font import Font
 from pygame.rect import Rect
 from pygame.surface import Surface
 
-from code.const import WIN_WIDTH, COLOR_ORANGE, C_WHITE, MENU_OPTION
+from code.const import WIN_WIDTH, C_ORANGE, C_WHITE, MENU_OPTION
 
 
 class Menu:
@@ -30,7 +30,7 @@ class Menu:
 
             for i in range(len(MENU_OPTION)):
                 if i == menu_option:
-                    self.menu_text(30, MENU_OPTION[i], COLOR_ORANGE, ((WIN_WIDTH / 2), 200 + 25 * i))
+                    self.menu_text(30, MENU_OPTION[i], C_ORANGE, ((WIN_WIDTH / 2), 200 + 25 * i))
                 else:
                     self.menu_text(30, MENU_OPTION[i], C_WHITE, ((WIN_WIDTH / 2), 200 + 25 * i))
 
